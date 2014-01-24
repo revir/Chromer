@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Chromer",
+    "description": "web scrawer",
+    "permissions": ["tabs", "storage", "<all_urls>"],
+    "background": {
+        "persistent": true,
+        "scripts": ["lib/jQuery-1.10.2-custom.js", "lib/socket.io.js", "core.js"]
+    },
+    "content_scripts": [{
+        "js": ["lib/jQuery-1.10.2-custom.js", "page.js"],
+        "matches": ["<all_urls>"]
+    }],
+    "options_page":"options.html",
+
+    "browser_action": {
+        "default_icon": {
+            "24": "images/chromer-24.png",
+            "32": "images/chromer-32.png"
+        }
+    },
+    "icons":{
+        "48": "images/chromer-48.png"
+    },
+    "minimum_chrome_version": "23",
+    "version": "1.0",
+    "update_url":"http://client2.google.com/service/update2/crx"
+}
